@@ -5,7 +5,7 @@
   const catalog = {
     liplegging: { title: 'Liplegging SONNA', price: 149.90, bundles: { 1: 149.90, 2: 233.22, 3: 293.85 } },
     short: { title: 'Short SONNA', price: 129.90, bundles: { 1: 129.90, 2: 187.06, 3: 245.51 } },
-    manguito: { title: 'Faixa LipCompress SONNA para os Braços', price: 9.90, bundles: { 1: 9.90 } }
+    manguito: { title: 'Faixa LipCompress SONNA para os Braços', price: 29.90, bundles: { 1: 29.90 } }
   };
   const currentProduct = pageProducts[location.pathname.split('/').pop()] || (location.pathname === '/' || location.pathname.endsWith('/index.html') ? 'liplegging' : null);
   const fromProductPage = /\/products\//.test(location.pathname);

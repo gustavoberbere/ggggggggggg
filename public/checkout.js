@@ -7,7 +7,7 @@ const sizes = ['P', 'M', 'G', 'GG', 'XGG', 'G1', 'G2', 'G3'];
 const products = {
   liplegging: { name: 'Liplegging SONNA', price: 149.90, bundles: { 1: 149.90, 2: 233.22, 3: 293.85 }, image: 'cdn/shop/files/liplegging-sonna-cinza-escuro7321.png', colors, sizes },
   short: { name: 'Short SONNA', price: 129.90, bundles: { 1: 129.90, 2: 187.06, 3: 245.51 }, image: 'cdn/shop/files/short-sonna-preta5731.png', colors, sizes },
-  manguito: { name: 'Faixa LipCompress SONNA para os Braços', price: 9.90, offerPrice: 5.40, bundles: { 1: 9.90 }, image: 'cdn/shop/files/faixa-lipcompress-bracos-begee4dd.png', colors: ['Bege', 'Preta'], sizes: ['Único'] }
+  manguito: { name: 'Faixa LipCompress SONNA para os Braços', price: 29.90, offerPrice: 5.40, bundles: { 1: 29.90 }, image: 'cdn/shop/files/faixa-lipcompress-bracos-begee4dd.png', colors: ['Bege', 'Preta'], sizes: ['Único'] }
 };
 let state = readState();
 
