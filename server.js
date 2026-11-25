@@ -11,7 +11,7 @@ const pendingPayments = new Map();
 const catalog = {
   liplegging: { name: 'Liplegging SONNA', price: 149.90, bundles: { 1: 149.90, 2: 233.22, 3: 293.85 } },
   short: { name: 'Short SONNA', price: 129.90, bundles: { 1: 129.90, 2: 187.06, 3: 245.51 } },
-  manguito: { name: 'Faixa LipCompress SONNA para os Braços', price: 29.90, offerPrice: 5.40, bundles: { 1: 29.90 } }
+  manguito: { name: 'Faixa LipCompress SONNA para os Braços', price: 29.90, offerPrice: 29.90, bundles: { 1: 29.90 } }
 };
 
 async function loadEnv(filename) {

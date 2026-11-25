@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 const catalog = {
   liplegging: { name: 'Liplegging SONNA', price: 149.9, bundles: { 1: 149.9, 2: 233.22, 3: 293.85 } },
   short: { name: 'Short SONNA', price: 129.9, bundles: { 1: 129.9, 2: 187.06, 3: 245.51 } },
-  manguito: { name: 'Faixa LipCompress SONNA para os Braços', price: 9.9, offerPrice: 5.4, bundles: { 1: 9.9 } },
+  manguito: { name: 'Faixa LipCompress SONNA para os Braços', price: 29.90, offerPrice: 29.90, bundles: { 1: 29.90 } },
 };
 
 export function sendJson(res, status, value) {

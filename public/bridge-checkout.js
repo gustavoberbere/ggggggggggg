@@ -38,7 +38,7 @@
     save(stateWithCart(cart));
   }
   const cartLines = () => (read().cart || []).filter((line) => catalog[line.product]);
-  function lineTotal(line) { const product = catalog[line.product]; return (line.offer ? 5.40 : (product.bundles[line.bundle] || product.price)) * Number(line.cartQuantity || 1); }
+  function lineTotal(line) { const product = catalog[line.product]; return (product.bundles[line.bundle] || product.price) * Number(line.cartQuantity || 1); }
   function paintCart() {
     const lines = cartLines(), items = document.querySelector('[data-cart-items]'), empty = document.querySelector('[data-cart-empty]'), foot = document.querySelector('[data-cart-foot]');
     if (items) items.innerHTML = lines.map((line, index) => {
@@ -96,7 +96,7 @@
   }, true);
   document.addEventListener('DOMContentLoaded', () => {
     localizeMainMenu();
-    document.querySelectorAll('a[href]').forEach((link) => { const href = link.getAttribute('href') || ''; if (/^https?:\/\//i.test(href) && !href.includes(location.hostname)) { link.setAttribute('href', homeUrl); link.removeAttribute('target'); } });
+    document.querySelectorAll('a[href]').forEach((link) => { const href = link.getAttribute('href') || ''; if (/^https?:\/\//i.test(href) && !href.includes(location.hostname) && !link.classList.contains('sonna-whatsapp-float')) { link.setAttribute('href', homeUrl); link.removeAttribute('target'); } });
     document.querySelectorAll('[data-upsell]').forEach((node) => { node.hidden = true; });
     addBuyNowButton(); paintCart();
   });

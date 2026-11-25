@@ -1,5 +1,10 @@
 (() => {
-  const whatsappUrl = 'https://wa.me/5561984718897';
+  const whatsappUrl = () => {
+    const hour = new Date().getHours();
+    const greeting = hour >= 5 && hour < 12 ? 'Bom dia' : hour >= 12 && hour < 18 ? 'Boa tarde' : 'Boa noite';
+    const message = `${greeting}! Vim pelo site da SONNA e gostaria de conhecer melhor os produtos, tirar algumas dúvidas e receber ajuda para escolher a opção ideal para mim. Pode me ajudar?`;
+    return `https://wa.me/5561984718897?text=${encodeURIComponent(message)}`;
+  };
 
   const mountWhatsAppButton = () => {
     if (document.querySelector('.sonna-whatsapp-float')) return;
@@ -36,7 +41,8 @@
 
     const link = document.createElement('a');
     link.className = 'sonna-whatsapp-float';
-    link.href = whatsappUrl;
+    link.href = whatsappUrl();
+    link.addEventListener('click', () => { link.href = whatsappUrl(); });
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     link.setAttribute('aria-label', 'Fale com a SONNA pelo WhatsApp');
