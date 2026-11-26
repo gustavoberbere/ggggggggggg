@@ -1,3 +1,4 @@
+import whatsappRedirect from './api/whatsapp.js';
 import crypto from 'node:crypto';
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
@@ -73,6 +74,8 @@ async function serveStatic(pathname, res) {
 }
 createServer(async (req, res) => {
   const url = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`); const paymentMatch = url.pathname.match(/^\/api\/payment\/([^/]+)\/status$/); const cepMatch = url.pathname.match(/^\/api\/cep\/(\d{8})$/);
+  if (url.pathname === '/url') return whatsappRedirect(req, res);
+  if (req.method === 'GET' && url.pathname === '/products/sonna-sculpt') { res.writeHead(302, { Location: '/#produtos' }); return res.end(); }
   if (req.method === 'GET' && url.pathname === '/cart.js') return sendJson(res, 200, { items: [], item_count: 0, total_price: 0 });
   if (req.method === 'POST' && /^\/cart\/(add|change|clear)\.js$/.test(url.pathname)) return sendJson(res, 200, { items: [], item_count: 0, total_price: 0 });
   if (req.method === 'POST' && url.pathname === '/api/payment/create') return createPayment(req, res);

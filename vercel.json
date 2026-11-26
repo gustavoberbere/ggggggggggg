@@ -1,0 +1,4 @@
+{
+  "rewrites": [{ "source": "/url", "destination": "/api/whatsapp" }],
+  "redirects": [{ "source": "/products/sonna-sculpt", "destination": "/#produtos", "permanent": false }]
+}
